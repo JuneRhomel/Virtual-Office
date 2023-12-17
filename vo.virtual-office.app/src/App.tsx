@@ -1,9 +1,11 @@
+import LoginPage from "./page/login/LoginPage"
+
 function App() {
 
 
   return (
     <>
-     test
+     <LoginPage/>
     </>
   )
 }

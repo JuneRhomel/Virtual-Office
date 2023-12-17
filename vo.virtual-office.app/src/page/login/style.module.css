@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+  width: 600px;
+  height: 70vh;
+  border: solid 1px #ccc;
+  padding: 20px;
+  border-radius: 20px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.header {
+    text-align: center;
+}
+.header h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.header img {
+    width: 200px;
+    object-fit: contain;
+}
