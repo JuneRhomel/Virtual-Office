@@ -54,7 +54,21 @@
 .m-5 {
   margin: 50px;
 }
-
+.btn {
+  background: var(--primary-color);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  cursor: pointer;
+  height: 45px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+}
 /* Input  CSS */
 .input-box {
   position: relative;

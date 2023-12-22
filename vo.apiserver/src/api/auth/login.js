@@ -39,19 +39,19 @@ router.post('/', async (req, res) => {
         }
 
         let results = await login();
+        if (results.length === 0) {
+            res.status(404).send(
+                {
+                    status: 404,
+                    success: false,
+                    message: 'Not Found',
+                    error: 'User not found'
+                }
+            );
+            return;
+        }
         results = results.pop()
         Promise.all([login()]).then(() => {
-            if (results.length === 0) {
-                res.status(404).send(
-                    {
-                        status: 404,
-                        success: false,
-                        message: 'Not Found',
-                        error: 'User not found'
-                    }
-                );
-                return;
-            }
             if (results.password !== data.password) {
                 res.status(400).send(
                     {
