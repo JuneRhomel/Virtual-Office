@@ -1,5 +1,9 @@
+import Navigation from "../../components/navigation/Navigation";
+
 export default function DashboardPage() {
   return (
-    <div>Welcome</div>
+    <div>
+      <Navigation />
+    </div>
   )
 }

@@ -2,22 +2,24 @@ import style from "./style.module.css";
 import FormComponent from "../../components/FormComponent";
 import { Button, Input } from "../../components/UI/UiComponents";
 import { LoginModel } from "../../model/model";
-import { useDispatch, useSelector } from 'react-redux';
-import { setUser } from "../../redux/authSlice";
+import { useDispatch } from 'react-redux';
+import { logIn } from "../../redux/authSlice";
 import auth from "../../utils/auth";
+import { Navigate } from "react-router-dom";
 function LoginPage() {
-  const user = useSelector((state: any) => state.auth.value);
-  console.log(user)
   const dispatch = useDispatch();
-  const handleFormSubmit = async (_event: React.FormEvent<HTMLFormElement>) => {
-    _event.preventDefault();
-    const { email, password } = _event.target as any;
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const { email, password } = event.target as HTMLFormElement;
     const data: LoginModel = {
       email: email.value,
       password: password.value,
     };
-    const res = await auth(data)
-    dispatch(setUser(res))
+    const response = await auth(data);
+    dispatch(logIn(response));
+    if (response.success) {
+      <Navigate to="/dashboard" />;
+    }
   };
   return (
     <div className={style.main}>
