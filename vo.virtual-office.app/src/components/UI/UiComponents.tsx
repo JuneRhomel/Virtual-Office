@@ -53,3 +53,12 @@ export  function Button({
         <button id={id} className={className + " btn"} type={type} >{children}</button>
     );
 }
+
+export function Container({ children }: any) {
+  const style = { width: "75%", marginLeft: "auto", marginRight: "auto", marginTop: "20px", height: "100%" }; 
+  return (
+    <div style={style}>
+      {children}
+    </div>
+  );
+}

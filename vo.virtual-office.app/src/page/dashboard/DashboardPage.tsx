@@ -1,9 +1,13 @@
-import Navigation from "../../components/navigation/Navigation";
+import Layout from "../../components/Layout/Layout";
+import { Container } from "../../components/UI/UiComponents";
 
 export default function DashboardPage() {
   return (
-    <div>
-      <Navigation />
-    </div>
+    <Layout >
+      <Container>
+        <h1>Dashboard</h1>
+      </Container>
+    </Layout>
+
   )
 }
