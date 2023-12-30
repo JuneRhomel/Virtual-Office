@@ -1,13 +1,13 @@
 import Layout from '../../components/Layout/Layout'
 import { Container, Title } from '../../components/UI/UiComponents'
 
-export default function Usermangement() {
+export default function Useraccess() {
   return (
     <Layout >
-    <Container>
-    <Title>User Mangement</Title>
-    </Container>
-  </Layout>
+      <Container>
+        <Title>User Access</Title>
+      </Container>
+    </Layout>
 
   )
 }

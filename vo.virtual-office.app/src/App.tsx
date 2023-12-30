@@ -5,17 +5,21 @@ import DashboardPage from "./page/dashboard/DashboardPage"
 import Cookies from "universal-cookie";
 import style from "./App.module.css"
 import Usermangement from "./page/usermangement/Usermangement";
-import Userrole from "./page/userrole/Userrole";
+import Useraccess from "./page/useraccess/Useraccess";
+import { setToken } from "../src/redux/token";
+import { useDispatch } from "react-redux";
 function App() {
+  const dispatch = useDispatch()
   const cookies = new Cookies();
   const token = cookies.get("token");
+  dispatch(setToken(token))
   return (
     <div className={style.container}>
       <Routes>
         <Route element={<ProtectedRoutes token={token} />} >
           <Route element={<DashboardPage />} path="/" />
           <Route element={<Usermangement />} path="/usermangement" />
-          <Route element={<Userrole />} path="/userrole" />
+          <Route element={<Useraccess />} path="/useraccess" />
         </Route>
         <Route element={<LoginPage />} path="/login" />
       </Routes>

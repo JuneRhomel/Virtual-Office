@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.groupBtn {
+    display: flex;
+    gap: 10px;
+}
+.btn {
+    width: max-content;
+    padding-inline: 20px;
+}

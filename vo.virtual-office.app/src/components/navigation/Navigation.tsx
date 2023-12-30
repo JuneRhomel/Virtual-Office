@@ -20,7 +20,7 @@ export default function Navigation({ children }: any) {
     {
       icon: <RiAdminFill />,
       name: "User Access",
-      path: "/userrole"
+      path: "/useraccess"
     },
   ]
   useEffect(() => {

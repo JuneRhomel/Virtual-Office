@@ -23,6 +23,7 @@ export const authSlice = createSlice({
         logIn: (state: { value: ResponseLoginModel; }, action: PayloadAction<ResponseLoginModel>) => {
             state.value = action.payload
             const token = action.payload.token;
+            if (!token) alert('Token not found');
             const expirationDate = new Date(Date.now() + 3 * 60 * 60 * 1000);
             cookies.set('token', token, { expires: expirationDate });
             location.href = '/'

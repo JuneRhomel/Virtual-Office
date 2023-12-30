@@ -14,3 +14,7 @@ export interface LoginModel {
     password: string;
 }
     
+export interface BottonModel {
+    label: string;
+    onClick: () => void;
+  }
