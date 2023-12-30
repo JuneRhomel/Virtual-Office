@@ -82,7 +82,7 @@ router.put("/:table", cookieJwtAuth, async (req, res) => {
     const online = (e) => {
       return new Promise((resolve, reject) => {
         connection.query(
-          `UPDATE _user SET is_online = ? WHERE id = ?`,
+          `UPDATE _user SET isOnline = ? WHERE id = ?`,
           [0, e],
           (err, results) => {
             if (err) {

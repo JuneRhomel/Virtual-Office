@@ -38,6 +38,10 @@ router.get("/:table", cookieJwtAuth, async (req, res) => {
         ...item,
         enc_id: encrypt(item.id),
       }));
+      data = data.map(({ deletedAt, deletedBy, ...rest }) => ({
+        ...rest,
+      }));
+      
       if (data.length > 0) {
         respone.success = true;
         respone.message = "Success";

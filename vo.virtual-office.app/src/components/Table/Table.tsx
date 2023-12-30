@@ -1,17 +1,12 @@
-
-import { useState } from "react";
 import { Stack, TablePagination } from '@mui/material';
 import { DEFAULT_OPTIONS, getTheme } from '@table-library/react-table-library/material-ui';
 import { useTheme } from "@table-library/react-table-library/theme";
 import { CompactTable } from "@table-library/react-table-library/compact";
-import { Input } from "../../components/UI/UiComponents";
 import { usePagination } from "@table-library/react-table-library/pagination";
-import style from "./Table.module.css"
 
 
 
 export default function Table({ data, sort, COLUMNS }: { data: any, sort: any, COLUMNS: any }) {
-    console.log(data);
     const materialTheme = getTheme(DEFAULT_OPTIONS);
     const customTheme = useTheme({
         Table: `
@@ -26,8 +21,7 @@ export default function Table({ data, sort, COLUMNS }: { data: any, sort: any, C
         },
         onChange: onPaginationChange,
     });
-    function onPaginationChange(action: any, state: any) {
-        console.log(action, state);
+    function onPaginationChange() {
     }
 
     return (
