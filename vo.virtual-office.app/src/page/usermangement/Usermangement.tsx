@@ -7,8 +7,12 @@ import style from "./Usermangement.module.css"
 import PageLayout from "../../components/PageLayout/PageLayout";
 import getData from "../../services/api/getData";
 import Table from "../../components/Table/Table";
+import PopupForm from "../../components/PopupForm/PopupForm";
+import { useDispatch,  } from "react-redux";
+import { setStatus } from "../../redux/helperSlice";
 
 export default function Usermangement() {
+  const dispatch = useDispatch()
   const [search, setSearch] = useState("");
   const nodes = getData()
   let data = { nodes };
@@ -52,7 +56,7 @@ export default function Usermangement() {
   const buttons = [
     {
       label: "Add User",
-      onClick: () => console.log("Add User"),
+      onClick: () => dispatch(setStatus()),
     },
     {
       label: "Download",
@@ -63,10 +67,13 @@ export default function Usermangement() {
     <Layout >
       <PageLayout title={"User Management"} btn={buttons as BottonModel[]}>
         <div className={style.search}>
-          <Input id="search" type="text" value={search} onChange={handleSearch} label="Search" />
+          <Input id="search" type="text" value={search} onChange={handleSearch} label="Search" name="search" />
         </div>
         <Table COLUMNS={COLUMNS} data={data} sort={sort} />
       </PageLayout>
+      <PopupForm title="Add User"  />
+
+
     </Layout>
   )
 }

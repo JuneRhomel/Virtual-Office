@@ -118,6 +118,10 @@ a, span {
   font-size: 16px;
   border: none;
 }
+.btn-cancel {
+  background-color: var(--grey-color);
+  color: #1b1d2169;
+}
 
 /* Input  CSS */
 .input-box {

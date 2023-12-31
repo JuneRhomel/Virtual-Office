@@ -36,12 +36,10 @@ function LoginPage() {
             placeholder="Enter email"
             required
             label="Email"
-            value="admin@mailinator.com"
           />
           <Input
             type="password"
             name="password"
-            value="12345"
             id="password"
             placeholder="Enter password"
             required
